@@ -6,4 +6,5 @@ module com.mycompany.progettogruppo10 {
     opens com.mycompany.progettogruppo10 to javafx.fxml;
     exports com.mycompany.progettogruppo10;
 }
+prova commit 
 */
