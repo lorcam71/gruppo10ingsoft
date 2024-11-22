@@ -4,3 +4,10 @@ a ogni contatto sono associate le seguenti informazioni
 Nome e o cognome
 da 0 a 3 numeri di telefono
 da 0 a 3 indirizzi e-mail
+
+Deve essere possibile :
+creare, modificare, cancellare contatti
+salvare informazioni dei contatti su un file, e caricare le informazioni da un file (salva/carica l'intera rubrica)
+accedere ai contatti visualizzando una lista ordinata alfabeticamente (cognome nome)
+creare un contatto inserendo la sottostrina inizaile del nome o del cognome
+
