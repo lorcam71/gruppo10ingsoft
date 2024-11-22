@@ -9,5 +9,5 @@ Deve essere possibile :
 creare, modificare, cancellare contatti
 salvare informazioni dei contatti su un file, e caricare le informazioni da un file (salva/carica l'intera rubrica)
 accedere ai contatti visualizzando una lista ordinata alfabeticamente (cognome nome)
-creare un contatto inserendo la sottostrina inizaile del nome o del cognome
+cercare un contatto inserendo la sottostringa inizaile del nome o del cognome
 
