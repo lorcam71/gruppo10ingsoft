@@ -16,6 +16,7 @@ public class Rubrica {
     
     public Rubrica(){
         rubrica = new ArrayList<Contatto>();
+        
     }
     
     public void addContatto(){
