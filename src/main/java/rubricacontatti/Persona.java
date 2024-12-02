@@ -15,6 +15,18 @@ public abstract class Persona {
     private String nome;
     private String cognome;
 
+
+
+    /**
+     * @brief Crea un oggetto persona
+     * 
+     * @param nome[in] nome associato all'oggetto
+     * @param cognome[in] cognome associato all'oggetto
+     * 
+     * Qualore uno dei 2 parametri dovesse non esser stato assegnato viene impostato a stringa vuota
+     * 
+     * 
+    */
     public Persona(String nome, String cognome) {
         if(nome.equals(null)){
             nome = "";
@@ -29,7 +41,13 @@ public abstract class Persona {
         this.cognome = cognome;
     }
 
-    
+
+
+    /**
+     * @brief I metodi getter e setter aggiungono e ritornano un parametro di persona
+     * 
+     * 
+    */
     public String getNome() {
         return nome;
     }
@@ -45,6 +63,8 @@ public abstract class Persona {
     public void setCognome(String cognome) {
         this.cognome = cognome;
     }
+
+
 
     @Override
     public String toString() {
