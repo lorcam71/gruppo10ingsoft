@@ -24,7 +24,7 @@ public class Rubrica {
     
     public Rubrica(){
         rubrica = new ArrayList<Contatto>();
-        importExport = new ImportExport();
+
     }
     /**
      * @brief la funzione aggiunge un contatto alla lista 
