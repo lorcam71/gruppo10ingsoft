@@ -32,7 +32,7 @@ public class Contatto extends Persona{
         super(nome,cognome);
         numeri = new ArrayList<String>();
         email = new ArrayList<String>();
-
+        
         
     }
     /**

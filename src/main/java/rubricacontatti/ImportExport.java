@@ -27,7 +27,7 @@ public class ImportExport {
      * 
     */
     
-    public ArrayList<Contatto> importRubrica(String fileName){
+    public static ArrayList<Contatto> importRubrica(String fileName){
         
     }
     
@@ -43,7 +43,7 @@ public class ImportExport {
      * 
     */
     
-    public void exportRubrica(String fileName, ArrayList<Contatto> rubrica){
+    public static void exportRubrica(String fileName, ArrayList<Contatto> rubrica){
         
     }
     
