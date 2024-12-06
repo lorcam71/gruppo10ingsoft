@@ -26,7 +26,13 @@ public class Contatto extends Persona{
     
     private ArrayList<String> numeri;
     private ArrayList<String> email;
-
+    
+    /**
+     * @brief Inizializza il contatto 
+     * Aggiunge gli attributi inseriti dall'utente al contatto
+     * 
+     * @param[in] nome,cognome, numero1,numero2,numero3,email1,email2,email3
+     */
     public Contatto(String nome, String cognome, String numero1, String numero2,
         String numero3, String email1, String email2, String email3) {
         super(nome,cognome);

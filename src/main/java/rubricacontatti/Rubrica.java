@@ -20,7 +20,11 @@ import java.util.ArrayList;
  */
 public class Rubrica {
     private ArrayList<Contatto> rubrica;
-    
+    /**
+     * @brief costruttore della rubrica
+     * Istanzia l'ArrayList di contatti
+     * 
+     */
     public Rubrica(){
         rubrica = new ArrayList<Contatto>();
 
