@@ -20,7 +20,6 @@ import java.util.ArrayList;
  */
 public class Rubrica {
     private ArrayList<Contatto> rubrica;
-    private ImportExport importExport;
     
     public Rubrica(){
         rubrica = new ArrayList<Contatto>();
