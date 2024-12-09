@@ -48,7 +48,7 @@ public class Contatto extends Persona{
      * 
     */
     public void addNumero(String numero){
-        
+        numeri.add(numero);
     }
     /**
      * @brief Aggiunge una mail 
@@ -57,7 +57,7 @@ public class Contatto extends Persona{
      * 
     */
     public void addEmail(String email){
-        
+        this.email.add(email);
     }
     /**
      * @brief rimuove un numero passato come argomento 
@@ -66,7 +66,7 @@ public class Contatto extends Persona{
      * 
     */
     public void removeNumero(String numero){
-        
+        numeri.remove(numero.indexOf(numero));
     }
     /**
      * @brief Aggiunge una mail 
@@ -75,7 +75,7 @@ public class Contatto extends Persona{
      * 
     */
     public void removeEmail(String email){
-        
+        this.email.remove(this.email.indexOf(email));
     }
 
     @Override
