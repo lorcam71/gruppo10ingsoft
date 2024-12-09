@@ -42,6 +42,13 @@ public class Contatto extends Persona{
         email = new ArrayList<String>();
         id=numero++;
         
+        numeri.add(numero1);
+        numeri.add(numero2);
+        numeri.add(numero3);
+        email.add(email1);
+        email.add(email2);
+        email.add(email3);
+        
     }
     /**
      * @brief Aggiunge un numero al contatto

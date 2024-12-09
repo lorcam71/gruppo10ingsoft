@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
@@ -12,15 +19,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.progettogruppo10.ThirdController">
    <children>
       <HBox prefHeight="45.0" prefWidth="600.0" style="-fx-border-color: black;">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <children>
-            <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="INFO CONTATTO" wrappingWidth="322.13668060302734">
+            <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="CREA CONTATTO" wrappingWidth="322.13668060302734">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -30,7 +36,7 @@
             </Text>
          </children>
       </HBox>
-      <TextField layoutX="14.0" layoutY="59.0" promptText="Nome">
+      <TextField fx:id="nameField" layoutX="13.0" layoutY="89.0" promptText="Nome">
          <effect>
             <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
                <color>
@@ -39,7 +45,7 @@
             </DropShadow>
          </effect>
       </TextField>
-      <TextField layoutX="226.0" layoutY="59.0" promptText="Cognome">
+      <TextField fx:id="surnameField" layoutX="217.0" layoutY="90.0" promptText="Cognome">
          <effect>
             <DropShadow height="7.5" offsetY="4.0" radius="3.875" width="10.0">
                <color>
@@ -48,17 +54,7 @@
             </DropShadow>
          </effect>
       </TextField>
-      <TableView layoutX="14.0" layoutY="100.0" prefHeight="282.0" prefWidth="149.0">
-        <columns>
-          <TableColumn maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="149.0" text="Numeri (Max 3)" />
-        </columns>
-      </TableView>
-      <TableView layoutX="226.0" layoutY="100.0" prefHeight="282.0" prefWidth="149.0">
-        <columns>
-          <TableColumn maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="149.0" text="Email (Max 3)" />
-        </columns>
-      </TableView>
-      <Button layoutX="473.0" layoutY="163.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" text="Modifica">
+      <Button fx:id="addContactButton" layoutX="472.0" layoutY="126.0" mnemonicParsing="false" onAction="#addContactToList" prefHeight="31.0" prefWidth="80.0" text="Aggiungi">
          <effect>
             <DropShadow height="7.5" offsetY="4.0" radius="3.875" width="10.0">
                <color>
@@ -70,7 +66,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="506.0" layoutY="351.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" text="Indietro">
+      <Button fx:id="backButton" layoutX="472.0" layoutY="179.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="80.0" text="Indietro">
          <effect>
             <DropShadow height="7.5" offsetY="4.0" radius="3.875" width="10.0">
                <color>
@@ -82,17 +78,79 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="473.0" layoutY="210.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" text="Rimuovi">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
+      <TextField fx:id="firstMailField" layoutX="16.0" layoutY="197.0" promptText="email 1">
          <effect>
-            <DropShadow height="7.5" offsetY="4.0" radius="3.875" width="10.0">
+            <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
                <color>
-                  <Color opacity="0.33000001311302185" />
+                  <Color opacity="0.32826748490333557" />
                </color>
             </DropShadow>
          </effect>
-      </Button>
+      </TextField>
+      <Label layoutX="13.0" layoutY="169.0" prefHeight="17.0" prefWidth="41.0" text="Email">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="secondMailField" layoutX="15.0" layoutY="238.0" promptText="email 2">
+         <effect>
+            <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
+               <color>
+                  <Color opacity="0.32826748490333557" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TextField>
+      <TextField fx:id="thirdMailField" layoutX="15.0" layoutY="282.0" promptText="email 3">
+         <effect>
+            <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
+               <color>
+                  <Color opacity="0.32826748490333557" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TextField>
+      <Label layoutX="17.0" layoutY="62.0" prefHeight="17.0" prefWidth="41.0" text="Nome">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="218.0" layoutY="62.0" prefHeight="20.0" prefWidth="71.0" text="Cognome">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="thirdNumber" layoutX="218.0" layoutY="280.0" promptText="numero 3">
+         <effect>
+            <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
+               <color>
+                  <Color opacity="0.32826748490333557" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TextField>
+      <TextField fx:id="secondNumber" layoutX="218.0" layoutY="236.0" promptText="numero 2">
+         <effect>
+            <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
+               <color>
+                  <Color opacity="0.32826748490333557" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TextField>
+      <Label layoutX="220.0" layoutY="167.0" prefHeight="20.0" prefWidth="127.0" text="Numeri di telefono">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="firstNumber" layoutX="219.0" layoutY="195.0" promptText="numero 1">
+         <effect>
+            <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
+               <color>
+                  <Color opacity="0.32826748490333557" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TextField>
    </children>
 </Pane>
