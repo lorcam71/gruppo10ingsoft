@@ -26,6 +26,8 @@ public class Contatto extends Persona{
     
     private ArrayList<String> numeri;
     private ArrayList<String> email;
+    private final int id;
+    private static int numero=0;
     
     /**
      * @brief Inizializza il contatto 
@@ -38,7 +40,7 @@ public class Contatto extends Persona{
         super(nome,cognome);
         numeri = new ArrayList<String>();
         email = new ArrayList<String>();
-        
+        id=numero++;
         
     }
     /**
@@ -78,6 +80,35 @@ public class Contatto extends Persona{
         this.email.remove(this.email.indexOf(email));
     }
 
+    public int getId() {
+        return id;
+    }
+
+
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Contatto other = (Contatto) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
+    }
+    
+    
+    
+    
+    
     @Override
     public String toString() {
         StringBuffer s = new StringBuffer();
