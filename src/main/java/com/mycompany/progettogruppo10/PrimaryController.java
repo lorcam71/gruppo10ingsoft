@@ -60,10 +60,13 @@ public class PrimaryController implements Initializable {
         contatti = FXCollections.observableArrayList(); //Istanzio arrayList osservabile e assegno un riferimento
 
         colName.setCellValueFactory(s->{return new SimpleStringProperty(s.getValue().getNome());});
-        colSurname.setCellValueFactory(new PropertyValueFactory("Cognome"));
+        colSurname.setCellValueFactory(s->{return new SimpleStringProperty(s.getValue().getCognome());});
+        
+        Contatto contattoTest = new Contatto("Mario", "Rossi", "123456", "", "", "mario@test.com", "", "");
+        contatti.add(contattoTest);
         
         listContatti.setItems(contatti);
-        
+        listContatti.refresh();
     }
 
     @FXML
@@ -86,6 +89,12 @@ public class PrimaryController implements Initializable {
         //dichiarando static la lista osservabile, e creando un metodo che la ritorna
         //posso richiamare il metodo ovunque ed eseguire le operazioni che voglio sulla lista
         return contatti;
+    }
+
+    @FXML
+    private void closeProgram(ActionEvent event) {
+        //Chiude il programma
+        System.exit(0);
     }
     
     
