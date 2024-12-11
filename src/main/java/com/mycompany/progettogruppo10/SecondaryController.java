@@ -100,8 +100,6 @@ public class SecondaryController implements Initializable {
         String email[] = contatto.getEmail();
         String numeri[] = contatto.getNumeri();
         
-        System.out.println("Email array length: " + contatto.getEmail().length);
-        System.out.println("Numeri array length: " + contatto.getNumeri().length);
         
         firstNumber.setText(numeri[0]);
         secondNumber.setText(numeri[1]);
