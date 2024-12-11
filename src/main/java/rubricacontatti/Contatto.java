@@ -90,6 +90,14 @@ public class Contatto extends Persona{
     public int getId() {
         return id;
     }
+    
+    public String[] getNumeri(){
+     return (String[]) this.numeri.toArray();
+    }
+    
+    public String[] getEmail(){
+        return (String[]) this.email.toArray();
+    }
 
 
 
