@@ -96,6 +96,14 @@ public class PrimaryController implements Initializable {
         //Chiude il programma
         System.exit(0);
     }
+
+    @FXML
+    private void importaRubrica(ActionEvent event) {
+    }
+
+    @FXML
+    private void esportaRubrica(ActionEvent event) {
+    }
     
     
     
