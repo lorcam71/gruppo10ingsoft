@@ -8,6 +8,7 @@ import java.io.IOException;
 import rubricacontatti.*;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -24,6 +25,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 /**
@@ -51,22 +53,47 @@ public class PrimaryController implements Initializable {
     private Button exit;
     
     private static ObservableList<Contatto> contatti; //Lista osservabile
+    private static Rubrica rubrica = new Rubrica(); //Creo la rubrica
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        contatti = FXCollections.observableArrayList(); //Istanzio arrayList osservabile e assegno un riferimento
-
+        //instanzio la lista osservabile
+        contatti = FXCollections.observableArrayList();
+        //metto i nomi delle celle 
         colName.setCellValueFactory(s->{return new SimpleStringProperty(s.getValue().getNome());});
         colSurname.setCellValueFactory(s->{return new SimpleStringProperty(s.getValue().getCognome());});
-        
-        Contatto contattoTest = new Contatto("Mario", "Rossi", "123456", "", "", "mario@test.com", "", "");
-        contatti.add(contattoTest);
+
+        //pulisco la vista e carico la rubrica
+        //cosi quando cambio view ricarico correttamente
+        contatti.clear();
+        contatti.addAll(rubrica.getRubrica());
+    
+        //Uso la funzione di ricerca implementata in rubrica
+        //Se l'utente non mette nulla nella barra di ricerca o cancella la sottotringa
+        //viene visualizzata tutta la rubrica
+        searchContatto.textProperty().addListener((observable,oldValue,newValue)->{
+            contatti.clear();
+            if (newValue == null || newValue.isEmpty()) {
+                contatti.addAll(rubrica.getRubrica());
+            } else {
+            ArrayList<Contatto> risultatiRicerca = rubrica.searchContatto(newValue);
+            contatti.addAll(risultatiRicerca);
+            }
+        });
         
         listContatti.setItems(contatti);
-        listContatti.refresh();
+        listContatti.refresh(); //aggiorno la view
+        
+        listContatti.setOnMouseClicked(event -> {
+            if(event.getClickCount() == 2){
+                Contatto contattoSelezionato = listContatti.getSelectionModel().getSelectedItem();
+                if(contattoSelezionato != null){
+                    infoContatto(contattoSelezionato);
+                }
+            }
+        });
     }
 
     @FXML
@@ -91,6 +118,10 @@ public class PrimaryController implements Initializable {
         return contatti;
     }
 
+    public static Rubrica getRubrica() {
+        return rubrica;
+    }
+    
     @FXML
     private void closeProgram(ActionEvent event) {
         //Chiude il programma
@@ -105,6 +136,22 @@ public class PrimaryController implements Initializable {
     private void esportaRubrica(ActionEvent event) {
     }
     
-    
+    private void infoContatto(Contatto contatto){
+        try{
+            FXMLLoader loader  =  new FXMLLoader(getClass().getResource("secondary.fxml"));
+            Parent root  = loader.load();
+            
+            SecondaryController secondaryCont = loader.getController();
+            secondaryCont.setContatto(contatto);
+            
+            Stage stage = (Stage) listContatti.getScene().getWindow();
+            Scene scene  = new Scene(root);
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        }catch(IOException e){
+            
+        }
+    }
     
 }

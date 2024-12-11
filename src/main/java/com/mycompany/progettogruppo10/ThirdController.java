@@ -75,6 +75,8 @@ public class ThirdController implements Initializable {
         Contatto n = new Contatto(nameField.getText(),surnameField.getText(),firstNumber.getText(),
         secondNumber.getText(),thirdNumber.getText(),firstMailField.getText(),secondMailField.getText(),thirdMailField.getText());
         //Richiamo il metodo statico della lista osservabile e aggiungo il contatto
+
+        PrimaryController.getRubrica().addContatto(n);
         PrimaryController.getContatti().add(n);
         goBack(event);     
     }
