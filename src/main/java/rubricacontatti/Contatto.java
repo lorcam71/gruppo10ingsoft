@@ -42,12 +42,43 @@ public class Contatto extends Persona{
         email = new ArrayList<String>();
         id=numero++;
         
-        numeri.add(numero1);
-        numeri.add(numero2);
-        numeri.add(numero3);
-        email.add(email1);
-        email.add(email2);
-        email.add(email3);
+        if(numero1 == null){
+            numeri.add("");
+        }else{
+            numeri.add(numero1);
+        }
+        
+        if(numero2 == null){
+            numeri.add("");
+        }else{
+            numeri.add(numero2);
+        }
+        
+        if(numero3 == null){
+            numeri.add("");
+        }else{
+            numeri.add(numero3);
+        }
+        
+        if(email1 == null){
+            email.add("");
+        }else{
+            email.add(email1);
+        }
+        
+        if(email2 == null){
+            email.add("");
+        }else{
+            email.add(email2);
+        }
+        if(email3 == null){
+            email.add("");
+        }else{
+            email.add(email3);
+        }
+        
+        
+
         
     }
     /**
@@ -92,11 +123,11 @@ public class Contatto extends Persona{
     }
     
     public String[] getNumeri(){
-     return (String[]) this.numeri.toArray();
+     return this.numeri.toArray(new String[0]);
     }
     
     public String[] getEmail(){
-        return (String[]) this.email.toArray();
+        return this.email.toArray(new String[0]);
     }
 
 
