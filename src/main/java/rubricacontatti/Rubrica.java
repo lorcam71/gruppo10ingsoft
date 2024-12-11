@@ -83,7 +83,8 @@ public class Rubrica {
         
         ArrayList<Contatto> rubricaRicerca = new ArrayList<Contatto>();
         for(Contatto c: rubrica){
-            if((c.getCognome()+c.getNome()).contains(sottostringa)){
+            
+            if(c.getNome().startsWith(sottostringa) || c.getCognome().startsWith(sottostringa) || (c.getCognome()+" "+c.getNome()).startsWith(sottostringa)){
                 rubricaRicerca.add(c);
             }
             
@@ -91,6 +92,12 @@ public class Rubrica {
         return rubricaRicerca;
     }
 
+    
+    public ArrayList<Contatto> getRubrica() {
+        return rubrica;
+    }
+    
+    
     
     @Override
     public String toString() {
