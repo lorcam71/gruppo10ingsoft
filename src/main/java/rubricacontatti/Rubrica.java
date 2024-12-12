@@ -17,8 +17,8 @@ import java.util.Iterator;
  *  
  * 
  *  @author Gruppo10
- *  @date December 2, 2024
- *  @version 1.0
+ *  @date December 13, 2024
+ *  @version 1.1
  */
 public class Rubrica {
     private ArrayList<Contatto> rubrica;
@@ -26,6 +26,7 @@ public class Rubrica {
      * @brief costruttore della rubrica
      * Istanzia l'ArrayList di contatti
      * 
+     * @return Istanza un oggetto di tipo Rubrica
      */
     public Rubrica(){
         rubrica = new ArrayList<Contatto>();
@@ -33,6 +34,8 @@ public class Rubrica {
     }
     /**
      * @brief la funzione aggiunge un contatto alla lista 
+     * La funzione dopo aver aggiunto il contatto alla lista,
+     * la ordina.
      * 
      * @param[in] c rappresenta il contatto da aggiungere
     */
@@ -50,32 +53,26 @@ public class Rubrica {
     }
     
     /**
-     * @brief la funzione aggiunge un contatto alla lista 
+     * @brief la funzione rimuove un contatto dalla lista 
+     * Basata sull'id del contatto.
      * 
      * @param[in] c rappresenta il contatto da rimuovere
     */
     public void removeContatto(Contatto c){
         rubrica.remove(c);
-        
-      /*rubrica.sort((o1, o2) -> {
-            if(!o1.getCognome().equals(o2.getCognome())){
-                return o1.getCognome().compareTo(o2.getCognome());
-            }
-            else{            
-                return o1.getNome().compareTo(o2.getNome());
-            }
-        });
-        da verificare la necessita 
-        */
     }
 
     /**
      * @brief Ricerca una stringa nella rubrica
      * 
-     * Dopo l'immessione di una sotto stringa quest' ultima viene utilizzata per trovare il contatto desiderato
+     * Dopo l'immessione di una sotto stringa quest' ultima 
+     * viene utilizzata per trovare il contatto desiderato
+     * Vengono visualizzati i contatti che hanno nome o cognome che iniziano per quella stringa.
+     * è stato gestito il caso in cui l'utente passi come stringa nome e cognome del contatto esempio:
+     * "mario rossi".
      * 
      * @param[in] sottostringa Stringa da utilizzare per la ricerca
-     * @return Il contatto cercato dall'utente
+     * @return ArrayList di tipo Contatto, con i contatti che iniziano per la sottostringa
      * 
      * 
     */
@@ -92,7 +89,11 @@ public class Rubrica {
         return rubricaRicerca;
     }
 
-    
+    /**
+     * @brief restituisce la rubrica
+     * 
+     * @return La rubrica.
+     */
     public ArrayList<Contatto> getRubrica() {
         return rubrica;
     }

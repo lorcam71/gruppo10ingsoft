@@ -7,9 +7,18 @@ package rubricacontatti;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author emanuele
+/** @file ImportExport.java
+ * 
+ * 
+ * 
+ *  @brief Il file contiene l'implementazione dei metodi per importare la rubrica 
+ * e per esportare la rubrica.
+ * 
+ * 
+ * 
+ *  @author Gruppo10
+ *  @date December 13, 2024
+ *  @version 1.1
  */
 public class ImportExport {
     
@@ -39,7 +48,7 @@ public class ImportExport {
      * Esporta i contatti dell'arrayList in un file esterno specificato dall'utente
      * 
      * @param[in] filename indica il file su cui esportare la rubrica
-     * @param[in] rubruca indica la lista di contatti che verra esportata
+     * @param[in] rubrica indica la lista di contatti che verra esportata
      * 
     */
     

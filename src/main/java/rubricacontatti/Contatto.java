@@ -19,8 +19,8 @@ import java.util.ArrayList;
  * 
  * 
  *  @author Gruppo10
- *  @date December 1, 2024
- *  @version 1.0
+ *  @date December 13, 2024
+ *  @version 1.1
  */
 public class Contatto extends Persona{
     
@@ -31,9 +31,14 @@ public class Contatto extends Persona{
     
     /**
      * @brief Inizializza il contatto 
-     * Aggiunge gli attributi inseriti dall'utente al contatto
+     * 
+     * Crea il contatto con gli attributi passati dall'utente.
+     * Se l'utente non inserisce dei dati, (vengono passati null)
+     * viene inserita una stringa vuota.
+     * Assegna un id univoco al contatto.
      * 
      * @param[in] nome,cognome, numero1,numero2,numero3,email1,email2,email3
+     * @return Oggetto di tipo Contatto
      */
     public Contatto(String nome, String cognome, String numero1, String numero2,
         String numero3, String email1, String email2, String email3) {
@@ -82,7 +87,7 @@ public class Contatto extends Persona{
         
     }
     /**
-     * @brief Aggiunge un numero al contatto
+     * @brief Aggiunge un numero di telefono al contatto
      * 
      * @param[in] numero da aggiungere al contatto
      * 
@@ -91,7 +96,7 @@ public class Contatto extends Persona{
         numeri.add(numero);
     }
     /**
-     * @brief Aggiunge una mail 
+     * @brief Aggiunge una mail al contatto
      * 
      * @param[in] email email da aggiungere al contatto
      * 
@@ -109,30 +114,54 @@ public class Contatto extends Persona{
         numeri.remove(numero.indexOf(numero));
     }
     /**
-     * @brief Aggiunge una mail 
+     * @brief Aggiunge una mail al contatto
      * 
-     * @param[in] email email da aggiungere al contatto
+     * @param[in] email è la mail da aggiungere al contatto
      * 
     */
     public void removeEmail(String email){
         this.email.remove(this.email.indexOf(email));
     }
-
+    
+    /**
+     * @brief restituisce l'id univoco assegnato al contatto
+     * 
+     * @return id del contatto
+     */
     public int getId() {
         return id;
     }
     
+    /**
+     * @brief Funzione per ricevere i numeri associati al contatto.
+     * 
+     * Lo fa tramite la funzion toArray() che trasforma l'arrayList in un array
+     * 
+     * @return array di stringhe contenente i numeri di telefono.
+     */
     public String[] getNumeri(){
      return this.numeri.toArray(new String[0]);
     }
     
+    /**
+     * @brief Funzione per ricevere le mail associate al contatto.
+     * 
+     * Lo fa tramite la funzion toArray() che trasforma l'arrayList in un array
+     * 
+     * @return array di stringhe contenente le mail.
+     */
     public String[] getEmail(){
         return this.email.toArray(new String[0]);
     }
 
-
-
-
+    /**
+     * @brief Override della funzione equals
+     * 
+     * Ci permette di confrontare i contatti tramite l'id.
+     * 
+     * 
+     * @return true se gli id corrispondono, false altrimenti
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
