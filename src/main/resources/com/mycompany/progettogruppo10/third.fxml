@@ -19,138 +19,197 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.progettogruppo10.ThirdController">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="598.0" style="-fx-background-color: WHITESMOKE;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.progettogruppo10.ThirdController">
    <children>
-      <HBox prefHeight="45.0" prefWidth="600.0" style="-fx-border-color: black;">
+      <HBox alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;">
+         <children>
+            <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Crea Contatto" wrappingWidth="189.00829315185547">
+               <font>
+                  <Font name="AppleMyungjo Regular" size="30.0" />
+               </font>
+            </Text>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="TOP_CENTER" spacing="20.0" style="-fx-border-color: black; -fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;">
+         <children>
+            <VBox alignment="CENTER" spacing="30.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="150.0">
+                     <children>
+                        <Label text="Nome">
+                           <font>
+                              <Font name="AppleMyungjo Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="nameField" promptText="Nome" style="-fx-background-radius: 20;">
+                           <effect>
+                              <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
+                                 <color>
+                                    <Color opacity="0.32826748490333557" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="175.0" prefWidth="150.0" spacing="10.0">
+                     <children>
+                        <Label text="Email">
+                           <font>
+                              <Font name="AppleMyungjo Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="firstMailField" promptText="email1" style="-fx-background-radius: 20;">
+                           <effect>
+                              <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
+                                 <color>
+                                    <Color opacity="0.32826748490333557" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="secondMailField" promptText="email2" style="-fx-background-radius: 20;">
+                           <effect>
+                              <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
+                                 <color>
+                                    <Color opacity="0.32826748490333557" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="thirdMailField" promptText="email3" style="-fx-background-radius: 20;">
+                           <effect>
+                              <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
+                                 <color>
+                                    <Color opacity="0.32826748490333557" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="40.0" top="40.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="CENTER" spacing="30.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="150.0">
+                     <children>
+                        <Label text="Cognome">
+                           <font>
+                              <Font name="AppleMyungjo Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="surnameField" promptText="Cognome" style="-fx-background-radius: 20;">
+                           <effect>
+                              <DropShadow height="7.5" offsetY="4.0" radius="3.875" width="10.0">
+                                 <color>
+                                    <Color opacity="0.3343465030193329" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="175.0" prefWidth="150.0" spacing="10.0">
+                     <children>
+                        <Label text="Numeri di telefono">
+                           <font>
+                              <Font name="AppleMyungjo Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="firstNumber" promptText="numero 1" style="-fx-background-radius: 20;">
+                           <effect>
+                              <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
+                                 <color>
+                                    <Color opacity="0.32826748490333557" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="secondNumber" promptText="numero 2" style="-fx-background-radius: 20;">
+                           <effect>
+                              <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
+                                 <color>
+                                    <Color opacity="0.32826748490333557" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </TextField>
+                        <TextField fx:id="thirdNumber" promptText="numero 3" style="-fx-background-radius: 20;">
+                           <effect>
+                              <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
+                                 <color>
+                                    <Color opacity="0.32826748490333557" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="40.0" top="40.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets left="20.0" right="40.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="CENTER" spacing="30.0">
+               <children>
+                  <Button fx:id="addContactButton" mnemonicParsing="false" onAction="#addContactToList" prefHeight="31.0" prefWidth="80.0" text="Aggiungi">
+                     <effect>
+                        <DropShadow height="7.5" offsetY="4.0" radius="3.875" width="10.0">
+                           <color>
+                              <Color opacity="0.33000001311302185" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="80.0" text="Indietro">
+                     <effect>
+                        <DropShadow height="7.5" offsetY="4.0" radius="3.875" width="10.0">
+                           <color>
+                              <Color opacity="0.33000001311302185" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="40.0" top="40.0" />
+               </padding>
+            </VBox>
+         </children>
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
-         <children>
-            <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="CREA CONTATTO" wrappingWidth="322.13668060302734">
-               <font>
-                  <Font name="System Bold" size="30.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="10.0" />
-               </HBox.margin>
-            </Text>
-         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+         </VBox.margin>
       </HBox>
-      <TextField fx:id="nameField" layoutX="13.0" layoutY="89.0" promptText="Nome">
-         <effect>
-            <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
-               <color>
-                  <Color opacity="0.32826748490333557" />
-               </color>
-            </DropShadow>
-         </effect>
-      </TextField>
-      <TextField fx:id="surnameField" layoutX="217.0" layoutY="90.0" promptText="Cognome">
-         <effect>
-            <DropShadow height="7.5" offsetY="4.0" radius="3.875" width="10.0">
-               <color>
-                  <Color opacity="0.3343465030193329" />
-               </color>
-            </DropShadow>
-         </effect>
-      </TextField>
-      <Button fx:id="addContactButton" layoutX="472.0" layoutY="126.0" mnemonicParsing="false" onAction="#addContactToList" prefHeight="31.0" prefWidth="80.0" text="Aggiungi">
-         <effect>
-            <DropShadow height="7.5" offsetY="4.0" radius="3.875" width="10.0">
-               <color>
-                  <Color opacity="0.33000001311302185" />
-               </color>
-            </DropShadow>
-         </effect>
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
-      <Button fx:id="backButton" layoutX="472.0" layoutY="179.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="80.0" text="Indietro">
-         <effect>
-            <DropShadow height="7.5" offsetY="4.0" radius="3.875" width="10.0">
-               <color>
-                  <Color opacity="0.33000001311302185" />
-               </color>
-            </DropShadow>
-         </effect>
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
-      <TextField fx:id="firstMailField" layoutX="16.0" layoutY="197.0" promptText="email 1">
-         <effect>
-            <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
-               <color>
-                  <Color opacity="0.32826748490333557" />
-               </color>
-            </DropShadow>
-         </effect>
-      </TextField>
-      <Label layoutX="13.0" layoutY="169.0" prefHeight="17.0" prefWidth="41.0" text="Email">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <TextField fx:id="secondMailField" layoutX="15.0" layoutY="238.0" promptText="email 2">
-         <effect>
-            <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
-               <color>
-                  <Color opacity="0.32826748490333557" />
-               </color>
-            </DropShadow>
-         </effect>
-      </TextField>
-      <TextField fx:id="thirdMailField" layoutX="15.0" layoutY="282.0" promptText="email 3">
-         <effect>
-            <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
-               <color>
-                  <Color opacity="0.32826748490333557" />
-               </color>
-            </DropShadow>
-         </effect>
-      </TextField>
-      <Label layoutX="17.0" layoutY="62.0" prefHeight="17.0" prefWidth="41.0" text="Nome">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="218.0" layoutY="62.0" prefHeight="20.0" prefWidth="71.0" text="Cognome">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <TextField fx:id="thirdNumber" layoutX="218.0" layoutY="280.0" promptText="numero 3">
-         <effect>
-            <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
-               <color>
-                  <Color opacity="0.32826748490333557" />
-               </color>
-            </DropShadow>
-         </effect>
-      </TextField>
-      <TextField fx:id="secondNumber" layoutX="218.0" layoutY="236.0" promptText="numero 2">
-         <effect>
-            <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
-               <color>
-                  <Color opacity="0.32826748490333557" />
-               </color>
-            </DropShadow>
-         </effect>
-      </TextField>
-      <Label layoutX="220.0" layoutY="167.0" prefHeight="20.0" prefWidth="127.0" text="Numeri di telefono">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <TextField fx:id="firstNumber" layoutX="219.0" layoutY="195.0" promptText="numero 1">
-         <effect>
-            <DropShadow height="5.0" offsetY="4.0" radius="3.25" width="10.0">
-               <color>
-                  <Color opacity="0.32826748490333557" />
-               </color>
-            </DropShadow>
-         </effect>
-      </TextField>
    </children>
-</Pane>
+</VBox>

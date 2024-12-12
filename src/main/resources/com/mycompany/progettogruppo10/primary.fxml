@@ -18,7 +18,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: WHITESMOKE;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.progettogruppo10.PrimaryController">
    <children>
-      <HBox layoutX="-1.0" prefHeight="56.0" prefWidth="803.0">
+      <HBox layoutX="3.0" prefHeight="56.0" prefWidth="793.0">
          <children>
             <Pane prefHeight="54.0" prefWidth="802.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;">
                <children>
@@ -27,7 +27,7 @@
                         <Font name="AppleMyungjo Regular" size="40.0" />
                      </font>
                   </Label>
-                  <Button fx:id="newContatto" layoutX="749.0" layoutY="10.0" mnemonicParsing="false" onAction="#addContact" text="+" textAlignment="CENTER">
+                  <Button fx:id="newContatto" layoutX="740.0" layoutY="10.0" mnemonicParsing="false" onAction="#addContact" text="+" textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -40,18 +40,18 @@
                         <Font name="AppleMyungjo Regular" size="15.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="609.0" layoutY="8.0" text="Gruppo10">
+                  <Label layoutX="607.0" layoutY="8.0" text="Gruppo10">
                      <font>
                         <Font name="AppleMyungjo Regular" size="20.0" />
                      </font>
                   </Label>
                </children>
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </padding>
                <HBox.margin>
                   <Insets left="7.0" right="7.0" top="7.0" />
                </HBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
             </Pane>
          </children>
       </HBox>

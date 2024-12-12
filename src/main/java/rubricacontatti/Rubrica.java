@@ -42,11 +42,11 @@ public class Rubrica {
     public void addContatto(Contatto c){
         rubrica.add(c);
         rubrica.sort((o1, o2) -> {
-            if(!o1.getCognome().equals(o2.getCognome())){
-                return o1.getCognome().compareTo(o2.getCognome());
+            if(!o1.getCognome().toLowerCase().equals(o2.getCognome().toLowerCase())){
+                return o1.getCognome().toLowerCase().compareTo(o2.getCognome().toLowerCase());
             }
             else{            
-                return o1.getNome().compareTo(o2.getNome());
+                return o1.getNome().toLowerCase().compareTo(o2.getNome().toLowerCase());
             }
         });
         
@@ -81,7 +81,7 @@ public class Rubrica {
         ArrayList<Contatto> rubricaRicerca = new ArrayList<Contatto>();
         for(Contatto c: rubrica){
             
-            if(c.getNome().startsWith(sottostringa) || c.getCognome().startsWith(sottostringa) || (c.getCognome()+" "+c.getNome()).startsWith(sottostringa)){
+            if(c.getNome().toLowerCase().startsWith(sottostringa.toLowerCase()) || c.getCognome().toLowerCase().startsWith(sottostringa.toLowerCase()) || (c.getCognome()+" "+c.getNome()).toLowerCase().startsWith(sottostringa.toLowerCase())){
                 rubricaRicerca.add(c);
             }
             
