@@ -141,16 +141,18 @@ public class PrimaryController implements Initializable {
             FXMLLoader loader  =  new FXMLLoader(getClass().getResource("secondary.fxml"));
             Parent root  = loader.load();
             
+            //Invio i dati al metodo del secondo controller
             SecondaryController secondaryCont = loader.getController();
             secondaryCont.setContatto(contatto);
             
+            //Setto la scena infoContatto
             Stage stage = (Stage) listContatti.getScene().getWindow();
             Scene scene  = new Scene(root);
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
         }catch(IOException e){
-            
+            e.printStackTrace();
         }
     }
     

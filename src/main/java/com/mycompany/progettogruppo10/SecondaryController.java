@@ -63,9 +63,28 @@ public class SecondaryController implements Initializable {
     }    
 
     @FXML
-    private void saveAction(ActionEvent event) {
+    private void saveAction(ActionEvent event) throws IOException{
+        //chiamare la funzione updateInfoContatto 
+        //{Prende le info dai fiel -> crea il contatto e rimuove il precedete}
+        updateContactInfo(contatto);
+        goBack(event);
     }
 
+    private void updateContactInfo(Contatto c){
+        //Salvo le informazioni aggiunte dall'utente
+        Contatto aggiornato = new Contatto(nameField.getText(),surnameField.getText(),firstNumber.getText(),
+        secondNumber.getText(),thirdNumber.getText(),firstMailField.getText(),secondMailField.getText(),thirdMailField.getText());
+        
+        //Cancello il contatto "vecchio" -> c
+        this.deleteContactFromList(c);
+        
+        //Aggiungo il nuovo con info aggiornate per preservare l'ordinamento
+        //Cosi se l'utente cambia cognome/nome siamo coperti
+        PrimaryController.getRubrica().addContatto(aggiornato);
+        PrimaryController.getContatti().add(aggiornato);
+    
+    }
+    
     @FXML
     private void goBack(ActionEvent event) throws IOException{
         //Torna alla scena principale
@@ -78,8 +97,17 @@ public class SecondaryController implements Initializable {
         stage.show();
     }
 
+    private void deleteContactFromList(Contatto c){
+        PrimaryController.getRubrica().removeContatto(contatto);
+        PrimaryController.getContatti().remove(contatto);
+    }
+    
     @FXML
-    private void removeContact(ActionEvent event) {
+    private void removeContact(ActionEvent event) throws IOException{
+        //Rimuovo dalla rubrica e dalla lista osservabile.
+        //Delete basata sul metodo equals definito in contatto
+        this.deleteContactFromList(contatto);
+        goBack(event);
     }
     
     private void initBindings() {
@@ -89,7 +117,9 @@ public class SecondaryController implements Initializable {
     }
     
     public void setContatto(Contatto contatto){
+        //Mi salvo le info del contatto.
         this.contatto = contatto;
+        //Mostro i dati all'utente settando i textField
         setViewInfoContatto();
     }
     
