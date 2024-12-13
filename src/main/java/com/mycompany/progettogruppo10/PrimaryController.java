@@ -11,6 +11,9 @@ import rubricacontatti.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -55,17 +58,19 @@ public class PrimaryController implements Initializable {
     
     private static ObservableList<Contatto> contatti; //Lista osservabile
     private static Rubrica rubrica = new Rubrica(); //Creo la rubrica
+    private static int flag = 0;
     /**
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb){
+        
         //instanzio la lista osservabile
         contatti = FXCollections.observableArrayList();
         //metto i nomi delle celle 
         colName.setCellValueFactory(s->{return new SimpleStringProperty(s.getValue().getNome());});
         colSurname.setCellValueFactory(s->{return new SimpleStringProperty(s.getValue().getCognome());});
-
+        
         //pulisco la vista e carico la rubrica
         //cosi quando cambio view ricarico correttamente
         contatti.clear();
@@ -95,6 +100,15 @@ public class PrimaryController implements Initializable {
                 }
             }
         });
+        if(flag == 0){try {
+            flag=1;
+            rubrica = ImportExport.importRubrica("./salvataggio.csv");
+            contatti.addAll(rubrica.getRubrica());
+            listContatti.setItems(contatti);
+        } catch (IOException ex) {
+            Logger.getLogger(PrimaryController.class.getName()).log(Level.SEVERE, null, ex);
+        }}
+        
     }
 
     @FXML
@@ -124,8 +138,9 @@ public class PrimaryController implements Initializable {
     }
     
     @FXML
-    private void closeProgram(ActionEvent event) {
+    private void closeProgram(ActionEvent event) throws IOException {
         //Chiude il programma
+        ImportExport.exportRubrica("./salvataggio.csv", rubrica.getRubrica());
         System.exit(0);
     }
 
@@ -187,5 +202,10 @@ public class PrimaryController implements Initializable {
             e.printStackTrace();
         }
     }
+    
+    private void initBindings(){
+        
+    }
+    
     
 }
