@@ -5,7 +5,15 @@
  */
 package rubricacontatti;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /** @file ImportExport.java
  * 
@@ -36,9 +44,29 @@ public class ImportExport {
      * 
     */
     
-    /*public static ArrayList<Contatto> importRubrica(String fileName){
-        
-    }*/
+    public static Rubrica importRubrica(String fileName) throws IOException {
+        Rubrica rubrica = new Rubrica();
+        try(Scanner s = new Scanner(new BufferedReader(new FileReader(fileName)))){
+            if(s.nextLine() == null) return rubrica;
+            
+            s.useDelimiter("[;\n]");
+            
+            while(s.hasNext()){
+                String nome = s.next();
+                String cognome = s.next();
+                String numero1 = s.next();
+                String numero2 = s.next();
+                String numero3 = s.next();
+                String email1 = s.next();
+                String email2 = s.next();
+                String email3 = s.next();
+                
+                Contatto c = new Contatto(nome,cognome,numero1,numero2,numero3,email1,email2,email3);
+                rubrica.addContatto(c);
+            }
+        }
+        return rubrica;
+    }
     
     
     
@@ -52,8 +80,37 @@ public class ImportExport {
      * 
     */
     
-    public static void exportRubrica(String fileName, ArrayList<Contatto> rubrica){
-        
+    public static void exportRubrica(String fileName, ArrayList<Contatto> rubrica) throws IOException{
+        try(PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(fileName)))){
+            
+            pw.println("Nome;Cognome;Numero1;Numero2;Numero3;Email1;Email2;Email3");
+            for(Contatto c: rubrica){
+                
+                pw.print(c.getNome());
+                pw.append(';');
+                
+                pw.print(c.getCognome());
+                pw.append(';');
+                
+                String[] email = c.getEmail();
+                String[] numeri = c.getNumeri();
+                
+                pw.print(numeri[0]);
+                pw.append(';');
+                pw.print(numeri[1]);
+                pw.append(';');
+                pw.print(numeri[2]);
+                pw.append(';');
+                
+                pw.print(email[0]);
+                pw.append(';');
+                pw.print(email[1]);
+                pw.append(';');
+                pw.println(email[2]);
+                
+            }
+            
+        }
     }
     
 }

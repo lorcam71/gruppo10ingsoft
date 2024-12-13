@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.mycompany.progettogruppo10;
+import java.io.File;
 import java.io.IOException;
 import rubricacontatti.*;
 
@@ -129,11 +130,42 @@ public class PrimaryController implements Initializable {
     }
 
     @FXML
-    private void importaRubrica(ActionEvent event) {
+    private void importaRubrica(ActionEvent event) throws IOException {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Seleziona il file di importazione");
+        
+        FileChooser.ExtensionFilter CSVfilter = new FileChooser.ExtensionFilter("File CVS (*.csv)", "*.*");
+        fileChooser.getExtensionFilters().add(CSVfilter);
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        File file = fileChooser.showOpenDialog(stage);
+        
+        rubrica = ImportExport.importRubrica(file.getAbsolutePath());
+        contatti.clear();
+        contatti.addAll(rubrica.getRubrica());
+        listContatti.setItems(contatti);
+        listContatti.refresh();
     }
 
     @FXML
-    private void esportaRubrica(ActionEvent event) {
+    private void esportaRubrica(ActionEvent event) throws IOException {
+        ImportExport.exportRubrica("prova_elenco", rubrica.getRubrica());
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Salva Rubrica");
+    
+        fileChooser.setInitialFileName("rubrica.csv");
+    
+        FileChooser.ExtensionFilter csvFilter = 
+        new FileChooser.ExtensionFilter("File CSV (*.csv)", "*.csv");
+        fileChooser.getExtensionFilters().add(csvFilter);
+    
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        File file = fileChooser.showSaveDialog(stage);
+    
+        if (file != null) {
+            ImportExport.exportRubrica(file.getAbsolutePath(), rubrica.getRubrica());
+        }
+        
     }
     
     private void infoContatto(Contatto contatto){
