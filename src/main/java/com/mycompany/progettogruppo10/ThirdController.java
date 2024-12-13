@@ -77,7 +77,6 @@ public class ThirdController implements Initializable {
         //Richiamo il metodo statico della lista osservabile e aggiungo il contatto
 
         PrimaryController.getRubrica().addContatto(n);
-        PrimaryController.getContatti().add(n);
         goBack(event);     
     }
 

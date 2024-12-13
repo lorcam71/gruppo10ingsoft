@@ -81,7 +81,6 @@ public class SecondaryController implements Initializable {
         //Aggiungo il nuovo con info aggiornate per preservare l'ordinamento
         //Cosi se l'utente cambia cognome/nome siamo coperti
         PrimaryController.getRubrica().addContatto(aggiornato);
-        PrimaryController.getContatti().add(aggiornato);
     
     }
     
@@ -99,7 +98,6 @@ public class SecondaryController implements Initializable {
 
     private void deleteContactFromList(Contatto c){
         PrimaryController.getRubrica().removeContatto(contatto);
-        PrimaryController.getContatti().remove(contatto);
     }
     
     @FXML
