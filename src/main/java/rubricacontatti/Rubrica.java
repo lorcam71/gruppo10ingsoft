@@ -81,7 +81,7 @@ public class Rubrica {
         ArrayList<Contatto> rubricaRicerca = new ArrayList<Contatto>();
         for(Contatto c: rubrica){
             
-            if(c.getNome().toLowerCase().startsWith(sottostringa.toLowerCase()) || c.getCognome().toLowerCase().startsWith(sottostringa.toLowerCase()) || (c.getCognome()+" "+c.getNome()).toLowerCase().startsWith(sottostringa.toLowerCase())){
+            if(c.getNome().toLowerCase().startsWith(sottostringa.toLowerCase()) || c.getCognome().toLowerCase().startsWith(sottostringa.toLowerCase()) || (c.getCognome()+" "+c.getNome()).toLowerCase().startsWith(sottostringa.toLowerCase()) || (c.getNome()+" "+c.getCognome()).toLowerCase().startsWith(sottostringa.toLowerCase())){
                 rubricaRicerca.add(c);
             }
             
