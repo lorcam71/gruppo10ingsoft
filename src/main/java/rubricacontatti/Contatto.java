@@ -129,7 +129,7 @@ public class Contatto extends Persona{
      * @return id del contatto
      */
     public int getId() {
-        return id;
+        return this.id;
     }
     
     /**
@@ -140,7 +140,7 @@ public class Contatto extends Persona{
      * @return array di stringhe contenente i numeri di telefono.
      */
     public String[] getNumeri(){
-     return this.numeri.toArray(new String[0]);
+     return this.numeri.toArray(new String[3]);
     }
     
     /**
@@ -151,7 +151,7 @@ public class Contatto extends Persona{
      * @return array di stringhe contenente le mail.
      */
     public String[] getEmail(){
-        return this.email.toArray(new String[0]);
+        return this.email.toArray(new String[3]);
     }
 
     /**
