@@ -99,11 +99,11 @@ public class Rubrica {
     }
     
     
-    
+    /*
     @Override
     public String toString() {
         return "Rubrica{" + "rubrica=" + rubrica + '}';
     }
     
-  
+  */
 }
