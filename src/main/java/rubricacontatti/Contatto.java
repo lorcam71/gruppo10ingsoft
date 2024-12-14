@@ -14,12 +14,11 @@ import java.util.ArrayList;
  * 
  *  @brief Il file contiene l'implementazione di un contatto 
  * 
- *  Contatto estende Persona e gestisce numeri ed email di un contatto in degli arrayList.
- *  Utilizza le funzioni addNumero addEmail removeNumero removeEmail 
+ *  Contatto estende Persona e gestisce numeri ed email di un contatto in degli arrayList. 
  * 
  * 
  *  @author Gruppo10
- *  @date December 13, 2024
+ *  @date December 14, 2024
  *  @version 1.1
  */
 public class Contatto extends Persona{
@@ -37,8 +36,14 @@ public class Contatto extends Persona{
      * viene inserita una stringa vuota.
      * Assegna un id univoco al contatto.
      * 
-     * @param[in] nome,cognome, numero1,numero2,numero3,email1,email2,email3
-     * @return Oggetto di tipo Contatto
+     * @param nome[in]
+     * @param cognome[in] 
+     * @param numero1[in]
+     * @param numero2[in]
+     * @param numero3[in]
+     * @param email1[in]
+     * @param email2[in]
+     * @param email3[in]
      */
     public Contatto(String nome, String cognome, String numero1, String numero2,
         String numero3, String email1, String email2, String email3) {
@@ -90,16 +95,16 @@ public class Contatto extends Persona{
     /**
      * @brief rimuove un numero passato come argomento 
      * 
-     * @param[in] numero numero da aggiungere al contatto
+     * @param numero[in] numero da aggiungere al contatto
      * 
     */
     public void removeNumero(String numero){
         this.numeri.remove(numero);
     }
     /**
-     * @brief Aggiunge una mail al contatto
+     * @brief Rimuove la mail passata come parametro
      * 
-     * @param[in] email è la mail da aggiungere al contatto
+     * @param email[in] è la mail da rimuovere
      * 
     */
     public void removeEmail(String email){
@@ -129,7 +134,7 @@ public class Contatto extends Persona{
     /**
      * @brief Funzione per ricevere le mail associate al contatto.
      * 
-     * Lo fa tramite la funzion toArray() che trasforma l'arrayList in un array
+     * Lo fa tramite la funzione toArray() che trasforma l'arrayList in un array
      * 
      * @return array di stringhe contenente le mail.
      */
@@ -143,7 +148,7 @@ public class Contatto extends Persona{
      * Ci permette di confrontare i contatti tramite l'id.
      * 
      * 
-     * @return true se gli id corrispondono, false altrimenti
+     * @return true se gli id corrispondono, false altrimenti.
      */
     @Override
     public boolean equals(Object obj) {
@@ -164,7 +169,13 @@ public class Contatto extends Persona{
     }
     
     
-    
+    /**
+     * @brief Override della funzione toString
+     * 
+     * 
+     * 
+     * @return stringa contenente numeri ed email associate ad un contatto.
+     */
     
     
     @Override

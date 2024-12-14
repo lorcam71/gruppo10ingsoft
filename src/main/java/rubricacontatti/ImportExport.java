@@ -7,7 +7,6 @@ package rubricacontatti;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -25,7 +24,7 @@ import java.util.Scanner;
  * 
  * 
  *  @author Gruppo10
- *  @date December 13, 2024
+ *  @date December 14, 2024
  *  @version 1.1
  */
 public class ImportExport {
@@ -33,11 +32,12 @@ public class ImportExport {
     
     
     /**
+     * @throws java.io.IOException
      * @brief Esegue l'importazione della rubrica
      * 
      * Carica nell'arrayList i contatti da un file
      * 
-     * @param[in] filename indica il file da cui eseguire l'importazione 
+     * @param fileName[in] indica il file da cui eseguire l'importazione 
      * 
      * 
      * @return contiene una lista di contatti imporatati dal file
@@ -71,12 +71,13 @@ public class ImportExport {
     
     
     /**
+     * @throws java.io.IOException
      * @brief Esegue l'esportazione della rubrica 
      * 
      * Esporta i contatti dell'arrayList in un file esterno specificato dall'utente
      * 
-     * @param[in] filename indica il file su cui esportare la rubrica
-     * @param[in] rubrica indica la lista di contatti che verra esportata
+     * @param fileName[in] indica il file su cui esportare la rubrica
+     * @param rubrica[in] indica la lista di contatti che verra esportata
      * 
     */
     

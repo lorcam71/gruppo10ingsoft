@@ -6,8 +6,7 @@
 package rubricacontatti;
 
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Iterator;
+
 /** @file Rubrica.java
  * 
  *  @brief Il file contiene un arraylist di contatti
@@ -17,7 +16,7 @@ import java.util.Iterator;
  *  
  * 
  *  @author Gruppo10
- *  @date December 13, 2024
+ *  @date December 14, 2024
  *  @version 1.1
  */
 public class Rubrica {
@@ -26,7 +25,6 @@ public class Rubrica {
      * @brief costruttore della rubrica
      * Istanzia l'ArrayList di contatti
      * 
-     * @return Istanza un oggetto di tipo Rubrica
      */
     public Rubrica(){
         rubrica = new ArrayList<Contatto>();
@@ -37,7 +35,7 @@ public class Rubrica {
      * La funzione dopo aver aggiunto il contatto alla lista,
      * la ordina.
      * 
-     * @param[in] c rappresenta il contatto da aggiungere
+     * @param c[in] rappresenta il contatto da aggiungere
     */
     public void addContatto(Contatto c){
         rubrica.add(c);
@@ -56,7 +54,7 @@ public class Rubrica {
      * @brief la funzione rimuove un contatto dalla lista 
      * Basata sull'id del contatto.
      * 
-     * @param[in] c rappresenta il contatto da rimuovere
+     * @param c[in] rappresenta il contatto da rimuovere
     */
     public void removeContatto(Contatto c){
         rubrica.remove(c);
@@ -71,7 +69,7 @@ public class Rubrica {
      * è stato gestito il caso in cui l'utente passi come stringa nome e cognome del contatto esempio:
      * "mario rossi".
      * 
-     * @param[in] sottostringa Stringa da utilizzare per la ricerca
+     * @param sottostringa[in] Stringa da utilizzare per la ricerca
      * @return ArrayList di tipo Contatto, con i contatti che iniziano per la sottostringa
      * 
      * 

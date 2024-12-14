@@ -6,9 +6,17 @@
  */
 package rubricacontatti;
 
-/**
- *
- * @author lorenzo
+/** @file Persona.java
+ * 
+ * 
+ * 
+ *  @brief Il file contiene l'implementazione della classe astratta Persona.
+ * 
+ * 
+ * 
+ *  @author Gruppo10
+ *  @date December 14, 2024
+ *  @version 1.1
  */
 public abstract class Persona {
     
@@ -23,7 +31,7 @@ public abstract class Persona {
      * @param nome[in] nome associato all'oggetto
      * @param cognome[in] cognome associato all'oggetto
      * 
-     * Qualore uno dei 2 parametri dovesse non esser stato assegnato viene impostato a stringa vuota
+     * Qualora uno dei 2 parametri dovesse non esser stato assegnato viene impostato a stringa vuota
      * 
      * 
     */
@@ -64,7 +72,10 @@ public abstract class Persona {
         this.cognome = cognome;
     }
 
-
+    /**
+     * @brief Override della funzione toString()
+     * @return stringa contenente nome e cognome della persona
+     */
 
     @Override
     public String toString() {
