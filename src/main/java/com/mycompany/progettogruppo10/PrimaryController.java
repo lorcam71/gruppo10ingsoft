@@ -150,7 +150,7 @@ public class PrimaryController implements Initializable {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Seleziona il file di importazione");
         
-        FileChooser.ExtensionFilter CSVfilter = new FileChooser.ExtensionFilter("File CVS (*.csv)", "*.*");
+        FileChooser.ExtensionFilter CSVfilter = new FileChooser.ExtensionFilter("File CVS (*.csv)", "*.csv");
         fileChooser.getExtensionFilters().add(CSVfilter);
         
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
