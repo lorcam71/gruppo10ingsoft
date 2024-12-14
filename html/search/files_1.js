@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rubrica_2ejava_0',['Rubrica.java',['../_rubrica_8java.html',1,'']]]
+  ['importexport_2ejava_0',['ImportExport.java',['../_import_export_8java.html',1,'']]]
 ];

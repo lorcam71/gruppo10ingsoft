@@ -3,16 +3,10 @@
 \doxysubsubsection*{Membri pubblici statici}
 \begin{DoxyCompactItemize}
 \item 
-static Array\+List$<$ \mbox{\hyperlink{classrubricacontatti_1_1_contatto}{Contatto}} $>$ \mbox{\hyperlink{classrubricacontatti_1_1_import_export_acfd42710782149ddf2f8c3b2f9a0e1db}{import\+Rubrica}} (String file\+Name)
+static \mbox{\hyperlink{classrubricacontatti_1_1_rubrica}{Rubrica}} \mbox{\hyperlink{classrubricacontatti_1_1_import_export_adf9c948b50257ff3206558fdacb2603f}{import\+Rubrica}} (String file\+Name)  throws IOException 
 \begin{DoxyCompactList}\small\item\em Esegue l\textquotesingle{}importazione della rubrica. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{classrubricacontatti_1_1_import_export_ac18de8433965bbd6f5b5c767c4904f4c}{export\+Rubrica}} (String file\+Name, Array\+List$<$ \mbox{\hyperlink{classrubricacontatti_1_1_contatto}{Contatto}} $>$ rubrica)
+static void \mbox{\hyperlink{classrubricacontatti_1_1_import_export_ac18de8433965bbd6f5b5c767c4904f4c}{export\+Rubrica}} (String file\+Name, Array\+List$<$ \mbox{\hyperlink{classrubricacontatti_1_1_contatto}{Contatto}} $>$ rubrica)  throws IOException
 \begin{DoxyCompactList}\small\item\em Esegue l\textquotesingle{}esportazione della rubrica. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\doxysubsection{Descrizione dettagliata}
-\begin{DoxyAuthor}{Autore}
-emanuele 
-\end{DoxyAuthor}
 
 
 \doxysubsection{Documentazione delle funzioni membro}
@@ -20,36 +14,46 @@ emanuele
 \index{exportRubrica@{exportRubrica}!rubricacontatti.ImportExport@{rubricacontatti.ImportExport}}
 \doxysubsubsection{\texorpdfstring{exportRubrica()}{exportRubrica()}}
 {\footnotesize\ttfamily \label{classrubricacontatti_1_1_import_export_ac18de8433965bbd6f5b5c767c4904f4c} 
-static void rubricacontatti.\+Import\+Export.\+export\+Rubrica (\begin{DoxyParamCaption}\item[{String}]{file\+Name}{, }\item[{Array\+List$<$ \mbox{\hyperlink{classrubricacontatti_1_1_contatto}{Contatto}} $>$}]{rubrica}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+static void rubricacontatti.\+Import\+Export.\+export\+Rubrica (\begin{DoxyParamCaption}\item[{String}]{file\+Name}{, }\item[{Array\+List$<$ \mbox{\hyperlink{classrubricacontatti_1_1_contatto}{Contatto}} $>$}]{rubrica}{}\end{DoxyParamCaption}) throws IOException\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Esegue l\textquotesingle{}esportazione della rubrica. 
 
+
+\begin{DoxyExceptions}{Eccezioni}
+{\em java.\+io.\+IOException} & \\
+\hline
+\end{DoxyExceptions}
 Esporta i contatti dell\textquotesingle{}array\+List in un file esterno specificato dall\textquotesingle{}utente
 
 
-\begin{DoxyParams}[1]{Parametri}
-\mbox{\texttt{ in}}  & {\em filename} & indica il file su cui esportare la rubrica \\
+\begin{DoxyParams}{Parametri}
+{\em file\+Name\mbox{[}in\mbox{]}} & indica il file su cui esportare la rubrica \\
 \hline
-\mbox{\texttt{ in}}  & {\em rubruca} & indica la lista di contatti che verra esportata \\
+{\em rubrica\mbox{[}in\mbox{]}} & indica la lista di contatti che verra esportata \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classrubricacontatti_1_1_import_export_acfd42710782149ddf2f8c3b2f9a0e1db}\index{rubricacontatti.ImportExport@{rubricacontatti.ImportExport}!importRubrica@{importRubrica}}
+\Hypertarget{classrubricacontatti_1_1_import_export_adf9c948b50257ff3206558fdacb2603f}\index{rubricacontatti.ImportExport@{rubricacontatti.ImportExport}!importRubrica@{importRubrica}}
 \index{importRubrica@{importRubrica}!rubricacontatti.ImportExport@{rubricacontatti.ImportExport}}
 \doxysubsubsection{\texorpdfstring{importRubrica()}{importRubrica()}}
-{\footnotesize\ttfamily \label{classrubricacontatti_1_1_import_export_acfd42710782149ddf2f8c3b2f9a0e1db} 
-static Array\+List$<$ \mbox{\hyperlink{classrubricacontatti_1_1_contatto}{Contatto}} $>$ rubricacontatti.\+Import\+Export.\+import\+Rubrica (\begin{DoxyParamCaption}\item[{String}]{file\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{classrubricacontatti_1_1_import_export_adf9c948b50257ff3206558fdacb2603f} 
+static \mbox{\hyperlink{classrubricacontatti_1_1_rubrica}{Rubrica}} rubricacontatti.\+Import\+Export.\+import\+Rubrica (\begin{DoxyParamCaption}\item[{String}]{file\+Name}{}\end{DoxyParamCaption}) throws IOException\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Esegue l\textquotesingle{}importazione della rubrica. 
 
+
+\begin{DoxyExceptions}{Eccezioni}
+{\em java.\+io.\+IOException} & \\
+\hline
+\end{DoxyExceptions}
 Carica nell\textquotesingle{}array\+List i contatti da un file
 
 
-\begin{DoxyParams}[1]{Parametri}
-\mbox{\texttt{ in}}  & {\em filename} & indica il file da cui eseguire l\textquotesingle{}importazione\\
+\begin{DoxyParams}{Parametri}
+{\em file\+Name\mbox{[}in\mbox{]}} & indica il file da cui eseguire l\textquotesingle{}importazione\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Restituisce}
@@ -59,4 +63,4 @@ contiene una lista di contatti imporatati dal file
 
 La documentazione per questa classe è stata generata a partire dal seguente file\+:\begin{DoxyCompactItemize}
 \item 
-src/main/java/rubricacontatti/Import\+Export.\+java\end{DoxyCompactItemize}
+src/main/java/rubricacontatti/\mbox{\hyperlink{_import_export_8java}{Import\+Export.\+java}}\end{DoxyCompactItemize}

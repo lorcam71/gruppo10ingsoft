@@ -10,15 +10,21 @@ Diagramma delle classi per rubricacontatti.\+Contatto\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classrubricacontatti_1_1_contatto_afcf449a8308543652d35a55d805b5a74}{Contatto}} (String nome, String cognome, String numero1, String numero2, String numero3, String email1, String email2, String email3)
-\begin{DoxyCompactList}\small\item\em Inizializza il contatto Aggiunge gli attributi inseriti dall\textquotesingle{}utente al contatto. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classrubricacontatti_1_1_contatto_a69b6947ebbb72fa52f22d8d413b2460c}{add\+Numero}} (String numero)
-\begin{DoxyCompactList}\small\item\em Aggiunge un numero al contatto. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classrubricacontatti_1_1_contatto_abcc9b2be1c21a251c5fab988bdaa17c6}{add\+Email}} (String email)
-\begin{DoxyCompactList}\small\item\em Aggiunge una mail. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inizializza il contatto. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classrubricacontatti_1_1_contatto_a6a795d2289eef086c55a0456491e4170}{remove\+Numero}} (String numero)
 \begin{DoxyCompactList}\small\item\em rimuove un numero passato come argomento \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classrubricacontatti_1_1_contatto_a0648371649214bd32b81ad1e3f7bfc4f}{remove\+Email}} (String email)
-\begin{DoxyCompactList}\small\item\em Aggiunge una mail. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Rimuove la mail passata come parametro. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classrubricacontatti_1_1_contatto_a8f41b3f388474025938346bef83a36a8}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em restituisce l\textquotesingle{}id univoco assegnato al contatto \end{DoxyCompactList}\item 
+String\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classrubricacontatti_1_1_contatto_a7b1f02f6bdcbbac2f8343793ad3b3ee9}{get\+Numeri}} ()
+\begin{DoxyCompactList}\small\item\em Funzione per ricevere i numeri associati al contatto. \end{DoxyCompactList}\item 
+String\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classrubricacontatti_1_1_contatto_ac013f7eb2e16f9d2d979b88ffabbc43f}{get\+Email}} ()
+\begin{DoxyCompactList}\small\item\em Funzione per ricevere le mail associate al contatto. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classrubricacontatti_1_1_contatto_af2a50920f4dd92815b5d3c9dc1bcd7d7}{equals}} (Object obj)
+\begin{DoxyCompactList}\small\item\em Override della funzione equals. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classrubricacontatti_1_1_contatto_a5feca4e6b8137157331d1fea7ee017ae}{to\+String}} ()
+\begin{DoxyCompactList}\small\item\em Override della funzione to\+String. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Membri pubblici ereditati da \mbox{\hyperlink{classrubricacontatti_1_1_persona}{rubricacontatti.\+Persona}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -37,46 +43,90 @@ rubricacontatti.\+Contatto.\+Contatto (\begin{DoxyParamCaption}\item[{String}]{n
 
 
 
-Inizializza il contatto Aggiunge gli attributi inseriti dall\textquotesingle{}utente al contatto. 
+Inizializza il contatto. 
+
+Crea il contatto con gli attributi passati dall\textquotesingle{}utente. Se l\textquotesingle{}utente non inserisce dei dati, (vengono passati null) viene inserita una stringa vuota. Assegna un id univoco al contatto.
 
 
-\begin{DoxyParams}[1]{Parametri}
-\mbox{\texttt{ in}}  & {\em nome,cognome,numero1,numero2,numero3,email1,email2,email3} & \\
+\begin{DoxyParams}{Parametri}
+{\em nome\mbox{[}in\mbox{]}} & \\
+\hline
+{\em cognome\mbox{[}in\mbox{]}} & \\
+\hline
+{\em numero1\mbox{[}in\mbox{]}} & \\
+\hline
+{\em numero2\mbox{[}in\mbox{]}} & \\
+\hline
+{\em numero3\mbox{[}in\mbox{]}} & \\
+\hline
+{\em email1\mbox{[}in\mbox{]}} & \\
+\hline
+{\em email2\mbox{[}in\mbox{]}} & \\
+\hline
+{\em email3\mbox{[}in\mbox{]}} & \\
 \hline
 \end{DoxyParams}
 
 
 \doxysubsection{Documentazione delle funzioni membro}
-\Hypertarget{classrubricacontatti_1_1_contatto_abcc9b2be1c21a251c5fab988bdaa17c6}\index{rubricacontatti.Contatto@{rubricacontatti.Contatto}!addEmail@{addEmail}}
-\index{addEmail@{addEmail}!rubricacontatti.Contatto@{rubricacontatti.Contatto}}
-\doxysubsubsection{\texorpdfstring{addEmail()}{addEmail()}}
-{\footnotesize\ttfamily \label{classrubricacontatti_1_1_contatto_abcc9b2be1c21a251c5fab988bdaa17c6} 
-void rubricacontatti.\+Contatto.\+add\+Email (\begin{DoxyParamCaption}\item[{String}]{email}{}\end{DoxyParamCaption})}
+\Hypertarget{classrubricacontatti_1_1_contatto_af2a50920f4dd92815b5d3c9dc1bcd7d7}\index{rubricacontatti.Contatto@{rubricacontatti.Contatto}!equals@{equals}}
+\index{equals@{equals}!rubricacontatti.Contatto@{rubricacontatti.Contatto}}
+\doxysubsubsection{\texorpdfstring{equals()}{equals()}}
+{\footnotesize\ttfamily \label{classrubricacontatti_1_1_contatto_af2a50920f4dd92815b5d3c9dc1bcd7d7} 
+boolean rubricacontatti.\+Contatto.\+equals (\begin{DoxyParamCaption}\item[{Object}]{obj}{}\end{DoxyParamCaption})}
 
 
 
-Aggiunge una mail. 
+Override della funzione equals. 
+
+Ci permette di confrontare i contatti tramite l\textquotesingle{}id.
+
+\begin{DoxyReturn}{Restituisce}
+true se gli id corrispondono, false altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{classrubricacontatti_1_1_contatto_ac013f7eb2e16f9d2d979b88ffabbc43f}\index{rubricacontatti.Contatto@{rubricacontatti.Contatto}!getEmail@{getEmail}}
+\index{getEmail@{getEmail}!rubricacontatti.Contatto@{rubricacontatti.Contatto}}
+\doxysubsubsection{\texorpdfstring{getEmail()}{getEmail()}}
+{\footnotesize\ttfamily \label{classrubricacontatti_1_1_contatto_ac013f7eb2e16f9d2d979b88ffabbc43f} 
+String\mbox{[}$\,$\mbox{]} rubricacontatti.\+Contatto.\+get\+Email (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
-\begin{DoxyParams}[1]{Parametri}
-\mbox{\texttt{ in}}  & {\em email} & email da aggiungere al contatto \\
-\hline
-\end{DoxyParams}
-\Hypertarget{classrubricacontatti_1_1_contatto_a69b6947ebbb72fa52f22d8d413b2460c}\index{rubricacontatti.Contatto@{rubricacontatti.Contatto}!addNumero@{addNumero}}
-\index{addNumero@{addNumero}!rubricacontatti.Contatto@{rubricacontatti.Contatto}}
-\doxysubsubsection{\texorpdfstring{addNumero()}{addNumero()}}
-{\footnotesize\ttfamily \label{classrubricacontatti_1_1_contatto_a69b6947ebbb72fa52f22d8d413b2460c} 
-void rubricacontatti.\+Contatto.\+add\+Numero (\begin{DoxyParamCaption}\item[{String}]{numero}{}\end{DoxyParamCaption})}
+
+Funzione per ricevere le mail associate al contatto. 
+
+Lo fa tramite la funzione to\+Array() che trasforma l\textquotesingle{}array\+List in un array
+
+\begin{DoxyReturn}{Restituisce}
+array di stringhe contenente le mail. 
+\end{DoxyReturn}
+\Hypertarget{classrubricacontatti_1_1_contatto_a8f41b3f388474025938346bef83a36a8}\index{rubricacontatti.Contatto@{rubricacontatti.Contatto}!getId@{getId}}
+\index{getId@{getId}!rubricacontatti.Contatto@{rubricacontatti.Contatto}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{classrubricacontatti_1_1_contatto_a8f41b3f388474025938346bef83a36a8} 
+int rubricacontatti.\+Contatto.\+get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Aggiunge un numero al contatto. 
+restituisce l\textquotesingle{}id univoco assegnato al contatto 
+
+\begin{DoxyReturn}{Restituisce}
+id del contatto 
+\end{DoxyReturn}
+\Hypertarget{classrubricacontatti_1_1_contatto_a7b1f02f6bdcbbac2f8343793ad3b3ee9}\index{rubricacontatti.Contatto@{rubricacontatti.Contatto}!getNumeri@{getNumeri}}
+\index{getNumeri@{getNumeri}!rubricacontatti.Contatto@{rubricacontatti.Contatto}}
+\doxysubsubsection{\texorpdfstring{getNumeri()}{getNumeri()}}
+{\footnotesize\ttfamily \label{classrubricacontatti_1_1_contatto_a7b1f02f6bdcbbac2f8343793ad3b3ee9} 
+String\mbox{[}$\,$\mbox{]} rubricacontatti.\+Contatto.\+get\+Numeri (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
-\begin{DoxyParams}[1]{Parametri}
-\mbox{\texttt{ in}}  & {\em numero} & da aggiungere al contatto \\
-\hline
-\end{DoxyParams}
+
+Funzione per ricevere i numeri associati al contatto. 
+
+Lo fa tramite la funzion to\+Array() che trasforma l\textquotesingle{}array\+List in un array
+
+\begin{DoxyReturn}{Restituisce}
+array di stringhe contenente i numeri di telefono. 
+\end{DoxyReturn}
 \Hypertarget{classrubricacontatti_1_1_contatto_a0648371649214bd32b81ad1e3f7bfc4f}\index{rubricacontatti.Contatto@{rubricacontatti.Contatto}!removeEmail@{removeEmail}}
 \index{removeEmail@{removeEmail}!rubricacontatti.Contatto@{rubricacontatti.Contatto}}
 \doxysubsubsection{\texorpdfstring{removeEmail()}{removeEmail()}}
@@ -85,11 +135,11 @@ void rubricacontatti.\+Contatto.\+remove\+Email (\begin{DoxyParamCaption}\item[{
 
 
 
-Aggiunge una mail. 
+Rimuove la mail passata come parametro. 
 
 
-\begin{DoxyParams}[1]{Parametri}
-\mbox{\texttt{ in}}  & {\em email} & email da aggiungere al contatto \\
+\begin{DoxyParams}{Parametri}
+{\em email\mbox{[}in\mbox{]}} & è la mail da rimuovere \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classrubricacontatti_1_1_contatto_a6a795d2289eef086c55a0456491e4170}\index{rubricacontatti.Contatto@{rubricacontatti.Contatto}!removeNumero@{removeNumero}}
@@ -103,10 +153,27 @@ void rubricacontatti.\+Contatto.\+remove\+Numero (\begin{DoxyParamCaption}\item[
 rimuove un numero passato come argomento 
 
 
-\begin{DoxyParams}[1]{Parametri}
-\mbox{\texttt{ in}}  & {\em numero} & numero da aggiungere al contatto \\
+\begin{DoxyParams}{Parametri}
+{\em numero\mbox{[}in\mbox{]}} & numero da aggiungere al contatto \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classrubricacontatti_1_1_contatto_a5feca4e6b8137157331d1fea7ee017ae}\index{rubricacontatti.Contatto@{rubricacontatti.Contatto}!toString@{toString}}
+\index{toString@{toString}!rubricacontatti.Contatto@{rubricacontatti.Contatto}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily \label{classrubricacontatti_1_1_contatto_a5feca4e6b8137157331d1fea7ee017ae} 
+String rubricacontatti.\+Contatto.\+to\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Override della funzione to\+String. 
+
+\begin{DoxyReturn}{Restituisce}
+stringa contenente numeri ed email associate ad un contatto. 
+\end{DoxyReturn}
+
+
+Reimplementa \mbox{\hyperlink{classrubricacontatti_1_1_persona_a7a7377407c3bbfd95bc3582fe6945984}{rubricacontatti.\+Persona}}.
+
 
 
 La documentazione per questa classe è stata generata a partire dal seguente file\+:\begin{DoxyCompactItemize}

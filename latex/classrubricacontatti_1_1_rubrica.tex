@@ -7,11 +7,13 @@
 {\bfseries Rubrica} ()
 \begin{DoxyCompactList}\small\item\em costruttore della rubrica Istanzia l\textquotesingle{}Array\+List di contatti \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classrubricacontatti_1_1_rubrica_a745c9635de12e0663628c1c9e0d2750e}{add\+Contatto}} (\mbox{\hyperlink{classrubricacontatti_1_1_contatto}{Contatto}} c)
-\begin{DoxyCompactList}\small\item\em la funzione aggiunge un contatto alla lista \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em la funzione aggiunge un contatto alla lista La funzione dopo aver aggiunto il contatto alla lista, la ordina. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classrubricacontatti_1_1_rubrica_a134313fe419b0a5e59ea24210329440d}{remove\+Contatto}} (\mbox{\hyperlink{classrubricacontatti_1_1_contatto}{Contatto}} c)
-\begin{DoxyCompactList}\small\item\em la funzione aggiunge un contatto alla lista \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classrubricacontatti_1_1_contatto}{Contatto}} \mbox{\hyperlink{classrubricacontatti_1_1_rubrica_ab41dd6e610717abd8aebf0b2d5e50730}{search\+Contatto}} (String sottostringa)
-\begin{DoxyCompactList}\small\item\em Ricerca una stringa nella rubrica. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em la funzione rimuove un contatto dalla lista Basata sull\textquotesingle{}id del contatto. \end{DoxyCompactList}\item 
+Array\+List$<$ \mbox{\hyperlink{classrubricacontatti_1_1_contatto}{Contatto}} $>$ \mbox{\hyperlink{classrubricacontatti_1_1_rubrica_a2cf0a79703d360a315740997f57cb1e3}{search\+Contatto}} (String sottostringa)
+\begin{DoxyCompactList}\small\item\em Ricerca una stringa nella rubrica. \end{DoxyCompactList}\item 
+Array\+List$<$ \mbox{\hyperlink{classrubricacontatti_1_1_contatto}{Contatto}} $>$ \mbox{\hyperlink{classrubricacontatti_1_1_rubrica_a63fd3b5ae335ee789da5d37f342af36a}{get\+Rubrica}} ()
+\begin{DoxyCompactList}\small\item\em restituisce la rubrica \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Documentazione delle funzioni membro}
@@ -23,13 +25,26 @@ void rubricacontatti.\+Rubrica.\+add\+Contatto (\begin{DoxyParamCaption}\item[{\
 
 
 
-la funzione aggiunge un contatto alla lista 
+la funzione aggiunge un contatto alla lista La funzione dopo aver aggiunto il contatto alla lista, la ordina. 
 
 
-\begin{DoxyParams}[1]{Parametri}
-\mbox{\texttt{ in}}  & {\em c} & rappresenta il contatto da aggiungere \\
+\begin{DoxyParams}{Parametri}
+{\em c\mbox{[}in\mbox{]}} & rappresenta il contatto da aggiungere \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classrubricacontatti_1_1_rubrica_a63fd3b5ae335ee789da5d37f342af36a}\index{rubricacontatti.Rubrica@{rubricacontatti.Rubrica}!getRubrica@{getRubrica}}
+\index{getRubrica@{getRubrica}!rubricacontatti.Rubrica@{rubricacontatti.Rubrica}}
+\doxysubsubsection{\texorpdfstring{getRubrica()}{getRubrica()}}
+{\footnotesize\ttfamily \label{classrubricacontatti_1_1_rubrica_a63fd3b5ae335ee789da5d37f342af36a} 
+Array\+List$<$ \mbox{\hyperlink{classrubricacontatti_1_1_contatto}{Contatto}} $>$ rubricacontatti.\+Rubrica.\+get\+Rubrica (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+restituisce la rubrica 
+
+\begin{DoxyReturn}{Restituisce}
+La rubrica. 
+\end{DoxyReturn}
 \Hypertarget{classrubricacontatti_1_1_rubrica_a134313fe419b0a5e59ea24210329440d}\index{rubricacontatti.Rubrica@{rubricacontatti.Rubrica}!removeContatto@{removeContatto}}
 \index{removeContatto@{removeContatto}!rubricacontatti.Rubrica@{rubricacontatti.Rubrica}}
 \doxysubsubsection{\texorpdfstring{removeContatto()}{removeContatto()}}
@@ -38,32 +53,32 @@ void rubricacontatti.\+Rubrica.\+remove\+Contatto (\begin{DoxyParamCaption}\item
 
 
 
-la funzione aggiunge un contatto alla lista 
+la funzione rimuove un contatto dalla lista Basata sull\textquotesingle{}id del contatto. 
 
 
-\begin{DoxyParams}[1]{Parametri}
-\mbox{\texttt{ in}}  & {\em c} & rappresenta il contatto da rimuovere \\
+\begin{DoxyParams}{Parametri}
+{\em c\mbox{[}in\mbox{]}} & rappresenta il contatto da rimuovere \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classrubricacontatti_1_1_rubrica_ab41dd6e610717abd8aebf0b2d5e50730}\index{rubricacontatti.Rubrica@{rubricacontatti.Rubrica}!searchContatto@{searchContatto}}
+\Hypertarget{classrubricacontatti_1_1_rubrica_a2cf0a79703d360a315740997f57cb1e3}\index{rubricacontatti.Rubrica@{rubricacontatti.Rubrica}!searchContatto@{searchContatto}}
 \index{searchContatto@{searchContatto}!rubricacontatti.Rubrica@{rubricacontatti.Rubrica}}
 \doxysubsubsection{\texorpdfstring{searchContatto()}{searchContatto()}}
-{\footnotesize\ttfamily \label{classrubricacontatti_1_1_rubrica_ab41dd6e610717abd8aebf0b2d5e50730} 
-\mbox{\hyperlink{classrubricacontatti_1_1_contatto}{Contatto}} rubricacontatti.\+Rubrica.\+search\+Contatto (\begin{DoxyParamCaption}\item[{String}]{sottostringa}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classrubricacontatti_1_1_rubrica_a2cf0a79703d360a315740997f57cb1e3} 
+Array\+List$<$ \mbox{\hyperlink{classrubricacontatti_1_1_contatto}{Contatto}} $>$ rubricacontatti.\+Rubrica.\+search\+Contatto (\begin{DoxyParamCaption}\item[{String}]{sottostringa}{}\end{DoxyParamCaption})}
 
 
 
 Ricerca una stringa nella rubrica. 
 
-Dopo l\textquotesingle{}immessione di una sotto stringa quest\textquotesingle{} ultima viene utilizzata per trovare il contatto desiderato
+Dopo l\textquotesingle{}immessione di una sotto stringa quest\textquotesingle{} ultima viene utilizzata per trovare il contatto desiderato Vengono visualizzati i contatti che hanno nome o cognome che iniziano per quella stringa. è stato gestito il caso in cui l\textquotesingle{}utente passi come stringa nome e cognome del contatto esempio\+: "{}mario rossi"{}.
 
 
-\begin{DoxyParams}[1]{Parametri}
-\mbox{\texttt{ in}}  & {\em sottostringa} & Stringa da utilizzare per la ricerca \\
+\begin{DoxyParams}{Parametri}
+{\em sottostringa\mbox{[}in\mbox{]}} & Stringa da utilizzare per la ricerca \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Restituisce}
-Il contatto cercato dall\textquotesingle{}utente 
+Array\+List di tipo \doxylink{classrubricacontatti_1_1_contatto}{Contatto}, con i contatti che iniziano per la sottostringa 
 \end{DoxyReturn}
 
 
