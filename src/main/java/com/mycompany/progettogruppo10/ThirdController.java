@@ -20,6 +20,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.beans.binding.Bindings;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -48,6 +49,8 @@ public class ThirdController implements Initializable {
     private Button backButton;
     @FXML
     private Button addContactButton;
+    @FXML
+    private Text alertText;
 
     /**
      * Initializes the controller class.
@@ -74,7 +77,7 @@ public class ThirdController implements Initializable {
         //Ricavo i dati dell'utent dai box
         Contatto n = new Contatto(nameField.getText(),surnameField.getText(),firstNumber.getText(),
         secondNumber.getText(),thirdNumber.getText(),firstMailField.getText(),secondMailField.getText(),thirdMailField.getText());
-        //Richiamo il metodo statico della lista osservabile e aggiungo il contatto
+        //Richiamo il metodo statico e aggiungo il contatto
 
         PrimaryController.getRubrica().addContatto(n);
         goBack(event);     
@@ -85,6 +88,9 @@ public class ThirdController implements Initializable {
         //Disattivo aggiungi, finchè non è presente almeno un carattere nellla casella nome o cognome
         addContactButton.disableProperty().bind(Bindings.when(
             nameField.textProperty().isEmpty().and(surnameField.textProperty().isEmpty())).then(true).otherwise(false));
+        //Avviso all'utente che deve inserire il nome o il cognome.
+        alertText.opacityProperty().bind(Bindings.when(
+                nameField.textProperty().isEmpty().and(surnameField.textProperty().isEmpty())).then(100).otherwise(0));
     }
     
     

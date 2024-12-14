@@ -24,6 +24,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -179,6 +180,11 @@ public class PrimaryController implements Initializable {
     
         if (file != null) {
             ImportExport.exportRubrica(file.getAbsolutePath(), rubrica.getRubrica());
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Esportazione completata");
+            alert.setHeaderText(null);
+            alert.setContentText("La rubrica è stata esportata con successo!");
+            alert.showAndWait();
         }
         
     }

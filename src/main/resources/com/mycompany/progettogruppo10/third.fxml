@@ -168,6 +168,14 @@
             </VBox>
             <VBox alignment="CENTER" spacing="30.0">
                <children>
+                  <Text fx:id="alertText" fill="#f50000" strokeType="OUTSIDE" strokeWidth="0.0" text="Inseirisci almeno uno tra nome e cognome" textAlignment="CENTER" wrappingWidth="100.0">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Text>
                   <Button fx:id="addContactButton" mnemonicParsing="false" onAction="#addContactToList" prefHeight="31.0" prefWidth="80.0" text="Aggiungi">
                      <effect>
                         <DropShadow height="7.5" offsetY="4.0" radius="3.875" width="10.0">
@@ -179,6 +187,9 @@
                      <font>
                         <Font name="AppleMyungjo Regular" size="12.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets top="-10.0" />
+                     </VBox.margin>
                   </Button>
                   <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="80.0" text="Indietro">
                      <effect>
@@ -197,7 +208,7 @@
                   </Button>
                </children>
                <padding>
-                  <Insets bottom="40.0" top="40.0" />
+                  <Insets bottom="40.0" />
                </padding>
             </VBox>
          </children>

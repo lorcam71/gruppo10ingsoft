@@ -18,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import rubricacontatti.Contatto;
 
@@ -50,8 +51,11 @@ public class SecondaryController implements Initializable {
     private TextField secondNumber;
     @FXML
     private TextField firstNumber;
+    @FXML
+    private Text alertText;
     
     private Contatto contatto;
+    
 
     /**
      * Initializes the controller class.
@@ -112,6 +116,9 @@ public class SecondaryController implements Initializable {
         //Disattivo salva, finchè non è presente almeno un carattere nellla casella nome o cognome
         saveButton.disableProperty().bind(Bindings.when(
             nameField.textProperty().isEmpty().and(surnameField.textProperty().isEmpty())).then(true).otherwise(false));
+        alertText.opacityProperty().bind(Bindings.when(
+                nameField.textProperty().isEmpty().and(surnameField.textProperty().isEmpty())).then(100).otherwise(0));
+    
     }
     
     public void setContatto(Contatto contatto){
