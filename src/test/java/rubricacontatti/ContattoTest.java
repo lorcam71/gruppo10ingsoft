@@ -32,37 +32,11 @@ public class ContattoTest {
     
     @BeforeEach
     public void setUp() {
-        c = new Contatto("Mario", "Rossi", "1234567890", null, null, "mario.rossi@lavoro.it", null, null);
+        c = new Contatto("Mario", "Rossi", "1234567890", "333665577", null, "mario.rossi@lavoro.it", "mario.rossi@gmail.com", null);
     }
     
     @AfterEach
     public void tearDown() {
-    }
-
-    /**
-     * Test of addNumero method, of class Contatto.
-     */
-    @Test
-    public void testAddNumero() {
-        System.out.println("addNumero");
-        String numero = "1234567891";
-        c.addNumero(numero);
-        c.addNumero("33");
-        System.out.println(c);
-        
-    }
-
-    /**
-     * Test of addEmail method, of class Contatto.
-     */
-    @Test
-    public void testAddEmail() {
-        System.out.println("addEmail");
-        String email = "";
-        Contatto instance = null;
-        instance.addEmail(email);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -71,11 +45,17 @@ public class ContattoTest {
     @Test
     public void testRemoveNumero() {
         System.out.println("removeNumero");
-        String numero = "";
-        Contatto instance = null;
-        instance.removeNumero(numero);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String numero = "333665577";
+        boolean trovato = false;
+        c.removeNumero(numero);
+        String numeri[] = c.getNumeri();
+        for(int i=0; i<c.getNumeri().length;i++){
+            if(numeri[i].equals(numero)){
+                trovato = true;
+                break;
+            }
+        }
+        assertFalse(trovato);
     }
 
     /**
@@ -84,11 +64,17 @@ public class ContattoTest {
     @Test
     public void testRemoveEmail() {
         System.out.println("removeEmail");
-        String email = "";
-        Contatto instance = null;
-        instance.removeEmail(email);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String email_r = "mario.rossi@gmail.com";
+        boolean trovato = false;
+        c.removeEmail(email_r);
+        String email[] = c.getEmail();
+        for(int i=0; i<c.getEmail().length;i++){
+            if(email[i].equals(email_r)){
+                trovato = true;
+                break;
+            }
+        }
+        assertFalse(trovato);
     }
 
     /**

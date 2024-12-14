@@ -86,24 +86,7 @@ public class Contatto extends Persona{
 
         
     }
-    /**
-     * @brief Aggiunge un numero di telefono al contatto
-     * 
-     * @param[in] numero da aggiungere al contatto
-     * 
-    */
-    public void addNumero(String numero){
-        numeri.add(numero);
-    }
-    /**
-     * @brief Aggiunge una mail al contatto
-     * 
-     * @param[in] email email da aggiungere al contatto
-     * 
-    */
-    public void addEmail(String email){
-        this.email.add(email);
-    }
+
     /**
      * @brief rimuove un numero passato come argomento 
      * 
@@ -111,7 +94,7 @@ public class Contatto extends Persona{
      * 
     */
     public void removeNumero(String numero){
-        numeri.remove(numero.indexOf(numero));
+        this.numeri.remove(numero);
     }
     /**
      * @brief Aggiunge una mail al contatto
@@ -120,7 +103,7 @@ public class Contatto extends Persona{
      * 
     */
     public void removeEmail(String email){
-        this.email.remove(this.email.indexOf(email));
+        this.email.remove(email);
     }
     
     /**
@@ -140,7 +123,7 @@ public class Contatto extends Persona{
      * @return array di stringhe contenente i numeri di telefono.
      */
     public String[] getNumeri(){
-     return this.numeri.toArray(new String[3]);
+     return this.numeri.toArray(new String[0]);
     }
     
     /**
@@ -151,7 +134,7 @@ public class Contatto extends Persona{
      * @return array di stringhe contenente le mail.
      */
     public String[] getEmail(){
-        return this.email.toArray(new String[3]);
+        return this.email.toArray(new String[0]);
     }
 
     /**
