@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import rubricacontatti.ImportExport;
 
 /**
  * JavaFX App
@@ -30,6 +31,11 @@ public class App extends Application {
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
+    }
+    
+    @Override
+    public void stop() throws IOException{
+        ImportExport.exportRubrica("./salvataggio.csv", PrimaryController.getRubrica().getRubrica());
     }
 
     public static void main(String[] args) {

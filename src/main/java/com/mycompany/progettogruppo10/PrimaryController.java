@@ -14,7 +14,9 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.beans.binding.Bindings;
+import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableBooleanValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -76,7 +78,7 @@ public class PrimaryController implements Initializable {
         //cosi quando cambio view ricarico correttamente
         contatti.clear();
         contatti.addAll(rubrica.getRubrica());
-    
+        
         //Uso la funzione di ricerca implementata in rubrica
         //Se l'utente non mette nulla nella barra di ricerca o cancella la sottotringa
         //viene visualizzata tutta la rubrica
@@ -92,7 +94,7 @@ public class PrimaryController implements Initializable {
         
         listContatti.setItems(contatti);
         listContatti.refresh(); //aggiorno la view
-        
+
         listContatti.setOnMouseClicked(event -> {
             if(event.getClickCount() == 2){
                 Contatto contattoSelezionato = listContatti.getSelectionModel().getSelectedItem();
@@ -109,7 +111,7 @@ public class PrimaryController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(PrimaryController.class.getName()).log(Level.SEVERE, null, ex);
         }}
-        
+        initBindings();
     }
 
     @FXML
@@ -210,7 +212,9 @@ public class PrimaryController implements Initializable {
     }
     
     private void initBindings(){
-        
+        Boolean dim = (rubrica.getRubrica().isEmpty());
+        BooleanBinding dim_Binding = Bindings.createBooleanBinding(() -> dim);
+        exportRubrica.disableProperty().bind(Bindings.when(dim_Binding).then(true).otherwise(false));
     }
     
     
